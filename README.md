@@ -32,6 +32,10 @@ PASS
 ok      github.com/fenggaocloud/timeranges/timerangesub 0.006s
 ```
 
-## Todos
+## Add more test cases
+
+Add new test cases in the test file ./timerangesub/timerangesub_test.go
+
+## TODOs
 
 . To add validation and overlap handling in each time ranges.
