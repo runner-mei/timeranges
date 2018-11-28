@@ -1,19 +1,24 @@
 package timerangesub
 
-import "sort"
+import (
+	"sort"
+)
 
 func sortRanges(ranges [][]int) {
 	sort.Slice(ranges, func(i, j int) bool {
 		if ranges[i][1] > ranges[j][0] {
-			return true
+			return false
 		}
 
-		return false
+		return true
 	})
 }
 
 func TimeRangesSubtract(rangesSub, rangesMinuend [][]int) [][]int {
 	result := [][]int{}
+
+	sortRanges(rangesSub)
+	sortRanges(rangesMinuend)
 
 	subCount, minuCount := len(rangesSub), len(rangesMinuend)
 

@@ -34,6 +34,13 @@ func TestTimeRangesSubtract(t *testing.T) {
 	if res := toStr(TimeRangesSubtract(subtractor, minuend)); res != expectStr {
 		t.Errorf("expect %s, but got %s", expectStr, res)
 	}
+
+	subtractor = [][]int{{900, 1100}, {1300, 1500}}
+	minuend = [][]int{{1030, 1045}, {900, 915}, {1000, 1015}, {1230, 1600}}
+	expectStr = "0915-1000,1015-1030,1045-1100"
+	if res := toStr(TimeRangesSubtract(subtractor, minuend)); res != expectStr {
+		t.Errorf("expect %s, but got %s", expectStr, res)
+	}
 }
 
 func toStr(ranges [][]int) string {
